@@ -743,18 +743,235 @@
   .footer-info { font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.9; }
   .footer-links { display: flex; gap: 16px; margin-top: 18px; flex-wrap: wrap; }
   .footer-links a { font-size: 12px; color: rgba(255,255,255,0.4); text-decoration: none; }
+
+  /* ───── HERO IMAGE MOOD OVERRIDE ───── */
+  html,
+  body {
+    background: #07111F;
+    color: #F8F0E8;
+  }
+  .hero {
+    background: #07111F;
+  }
+  .hero::before {
+    display: none;
+  }
+  .hero-image-wrap {
+    width: 100%;
+    margin: 0;
+    background: #07111F;
+  }
+  .hero-image-wrap img {
+    width: 100%;
+    height: auto;
+  }
+  .hero-image-placeholder {
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(160deg, #081524 0%, #111D31 58%, #2A1931 100%);
+    color: #D7B9B5;
+    box-shadow: inset 0 -1px 0 rgba(255,177,165,0.14);
+  }
+  .ticker-wrap {
+    background: linear-gradient(90deg, #081524 0%, #182B46 42%, #F4A195 100%);
+    box-shadow: 0 1px 0 rgba(255,177,165,0.2);
+  }
+  .ticker-item {
+    color: #FFF6EF;
+  }
+  .section,
+  .problem-bg,
+  .feature-bg,
+  .result-bg,
+  .proof-bg {
+    background: #07111F;
+  }
+  .vs-bg,
+  .cta-section {
+    background: linear-gradient(180deg, #0B1627 0%, #111D31 62%, #241A2D 100%);
+  }
+  .section-label,
+  .vs-bg .section-label,
+  .cta-section .section-label {
+    color: #FFC7BC;
+    background: rgba(244,161,149,0.13);
+    border: 1px solid rgba(244,161,149,0.22);
+  }
+  .section-title,
+  .vs-bg .section-title,
+  .cta-section .section-title,
+  .feature-bg h2 {
+    color: #FFF6EF !important;
+    text-shadow: 0 1px 14px rgba(244,161,149,0.08);
+  }
+  .section-body,
+  .feature-desc,
+  .step-desc,
+  .cta-section .section-body {
+    color: #B8C1CF;
+  }
+  .problem-quote,
+  .problem-list li,
+  .proof-card,
+  .stat-card {
+    background: rgba(255,246,239,0.055);
+    border: 1px solid rgba(255,199,188,0.15);
+    box-shadow: 0 14px 36px rgba(0,0,0,0.22);
+    backdrop-filter: blur(10px);
+  }
+  .problem-quote {
+    border-left: 4px solid #F4A195;
+  }
+  .quote-original,
+  .problem-list li,
+  .proof-card-quote {
+    color: #FFF6EF;
+  }
+  .quote-translation,
+  .proof-role,
+  .stat-label {
+    color: #B8C1CF;
+  }
+  .quote-source,
+  .proof-name,
+  .stars {
+    color: #F4A195;
+  }
+  .feature-row {
+    border-bottom: 1px solid rgba(255,199,188,0.12);
+  }
+  .feature-title {
+    color: #FFF6EF;
+  }
+  .feature-image {
+    background: linear-gradient(160deg, rgba(255,246,239,0.08), rgba(244,161,149,0.05));
+    border: 1.5px solid rgba(255,199,188,0.24);
+    color: #D7B9B5;
+    box-shadow: inset 0 0 32px rgba(244,161,149,0.04);
+  }
+  .result-card,
+  .proof-avatar,
+  .success-icon {
+    background: linear-gradient(145deg, #081524 0%, #1B2D48 48%, #F4A195 150%);
+    box-shadow: 0 18px 48px rgba(0,0,0,0.34), inset 0 0 0 1px rgba(255,199,188,0.15);
+  }
+  .result-card-title span {
+    color: #FFC7BC;
+  }
+  .vs-table {
+    box-shadow: 0 18px 48px rgba(0,0,0,0.28);
+  }
+  .vs-table thead th:first-child,
+  .vs-table thead th:nth-child(2) {
+    background: #13223A;
+    color: #B8C1CF;
+  }
+  .vs-table thead th:last-child {
+    background: linear-gradient(90deg, #F4A195, #FFCFC6);
+    color: #081524;
+  }
+  .vs-table tbody td {
+    border-bottom: 1px solid rgba(255,199,188,0.09);
+  }
+  .vs-table tbody td:first-child {
+    background: rgba(255,246,239,0.06);
+    color: #FFF6EF;
+  }
+  .vs-table tbody td:nth-child(2) {
+    background: rgba(255,246,239,0.035);
+    color: #657286;
+  }
+  .vs-table tbody td:last-child {
+    background: rgba(244,161,149,0.11);
+    color: #FFC7BC;
+  }
+  .stat-num {
+    background: linear-gradient(90deg, #FFF6EF, #F4A195);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .cta-btn,
+  .fixed-bar-btn,
+  .submit-btn {
+    background: linear-gradient(90deg, #FFD8CF 0%, #F4A195 100%);
+    color: #081524;
+    box-shadow: 0 10px 28px rgba(244,161,149,0.34), 0 0 0 1px rgba(255,255,255,0.18) inset;
+  }
+  .cta-sub {
+    color: rgba(216,225,238,0.72);
+  }
+  .fixed-bar {
+    background: rgba(8,21,36,0.94);
+    border-top: 1px solid rgba(255,199,188,0.18);
+    box-shadow: 0 -12px 34px rgba(0,0,0,0.38);
+    backdrop-filter: blur(14px);
+  }
+  .fixed-bar-text {
+    color: #B8C1CF;
+  }
+  .fixed-bar-text strong {
+    color: #FFF6EF;
+  }
+  .modal-overlay {
+    background: rgba(3,9,18,0.7);
+  }
+  .modal-sheet {
+    background: #0B1627;
+    border: 1px solid rgba(255,199,188,0.16);
+    box-shadow: 0 -20px 60px rgba(0,0,0,0.38);
+  }
+  .modal-handle {
+    background: rgba(255,199,188,0.28);
+  }
+  .modal-title,
+  .form-label,
+  .success-title {
+    color: #FFF6EF;
+  }
+  .modal-sub,
+  .agree-row,
+  .success-body {
+    color: #B8C1CF;
+  }
+  .form-input {
+    color: #FFF6EF;
+    background: rgba(255,246,239,0.06);
+    border-color: rgba(255,199,188,0.18);
+  }
+  .form-input:focus {
+    border-color: #F4A195;
+    background: rgba(255,246,239,0.09);
+  }
+  .form-input::placeholder {
+    color: rgba(216,185,181,0.62);
+  }
+  .form-textarea::-webkit-scrollbar {
+    width: 8px;
+  }
+  .form-textarea::-webkit-scrollbar-track {
+    background: rgba(255,246,239,0.05);
+    border-radius: 100px;
+  }
+  .form-textarea::-webkit-scrollbar-thumb {
+    background: rgba(244,161,149,0.45);
+    border-radius: 100px;
+  }
+  .agree-row input[type="checkbox"] {
+    accent-color: #F4A195;
+  }
+  footer {
+    background: #030912;
+  }
+  .footer-logo span {
+    color: #F4A195;
+  }
 </style>
 </head>
 <body>
 
 <!-- ═══ HERO ═══ -->
 <section class="hero">
-  <div style="padding: 42px 24px 0; text-align: center;">
-    <div class="hero-badge">UNSAID STORY</div>
-    <h1 class="hero-headline">모든 이별에는<br><em>각자의 이야기</em>가 있습니다</h1>
-    <p class="hero-sub">끝난 사랑을, 한 편의 소설로 남기세요.</p>
-    <p class="hero-sub-small">일기, 카톡, 사진 속에 남은 마음을<br>당신만의 문학 작품으로 재해석해드립니다.</p>
-  </div>
   <!-- unsaid-hero.png 파일을 image 폴더에 저장하면 자동으로 표시됩니다 -->
   <div class="hero-image-wrap" id="heroImageWrap" style="display:none">
     <img src="image/unsaid-hero.png" alt="Unsaid Story 서비스 화면" id="heroImage">
@@ -998,7 +1215,7 @@
         <input class="form-input" id="inputPhone" type="tel" placeholder="010-0000-0000" maxlength="13">
       </div>
       <div class="form-group">
-        <label class="form-label">어떤 이야기가 아직 마음에 남아있나요? <span style="color:#8F3D4A">(선택)</span></label>
+        <label class="form-label">어떤 이야기가 아직 마음에 남아있나요? <span style="color:#F4A195">(선택)</span></label>
         <textarea class="form-input form-textarea" id="inputSituation" placeholder="예) 보내지 못한 말, 잊히지 않는 장면, 마지막 대화, 함께 찍은 사진 속 기억까지 자유롭게 남겨주세요."></textarea>
       </div>
       <div class="agree-row">
