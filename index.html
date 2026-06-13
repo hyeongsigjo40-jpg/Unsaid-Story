@@ -212,9 +212,100 @@
     line-height: 1.8;
     color: #5F6878;
   }
+  .eyebrow-inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #8F3D4A;
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.02em;
+    margin-bottom: 10px;
+  }
+  .eyebrow-inline::before {
+    content: '';
+    width: 22px;
+    height: 1px;
+    background: currentColor;
+    opacity: 0.7;
+  }
 
   /* ───── PROBLEM ───── */
   .problem-bg { background: #F3F5F8; }
+  .problem-lead {
+    position: relative;
+    margin: 28px 0 18px;
+    padding: 22px 20px 22px 22px;
+    border-radius: 22px;
+    background: linear-gradient(145deg, rgba(255,253,249,0.9), rgba(247,244,241,0.78));
+    border: 1px solid rgba(183,110,121,0.16);
+    box-shadow: 0 10px 32px rgba(21,26,45,0.08);
+    overflow: hidden;
+  }
+  .problem-lead::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 4px;
+    background: linear-gradient(180deg, #8F3D4A, #B76E79);
+  }
+  .problem-lead-main {
+    position: relative;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.55;
+    color: #151A2D;
+    letter-spacing: -0.02em;
+  }
+  .problem-flow {
+    display: grid;
+    gap: 12px;
+    margin: 18px 0;
+  }
+  .problem-flow-card {
+    position: relative;
+    padding: 18px 18px 18px 20px;
+    border-radius: 18px;
+    background: #FFFDF9;
+    border: 1px solid rgba(21,26,45,0.08);
+    box-shadow: 0 4px 16px rgba(21,26,45,0.05);
+  }
+  .problem-flow-card::after {
+    content: '';
+    position: absolute;
+    left: 24px;
+    bottom: -13px;
+    width: 1px;
+    height: 14px;
+    background: rgba(183,110,121,0.32);
+  }
+  .problem-flow-card:last-child::after {
+    display: none;
+  }
+  .problem-flow-title {
+    font-size: 13px;
+    font-weight: 900;
+    color: #8F3D4A;
+    margin-bottom: 8px;
+  }
+  .problem-flow-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #5F6878;
+  }
+  .problem-closing {
+    margin-top: 18px;
+    font-size: 16px;
+    font-weight: 900;
+    line-height: 1.6;
+    color: #151A2D;
+    letter-spacing: -0.02em;
+  }
+  .problem-check-title {
+    font-size: 20px;
+    margin-top: 42px;
+    margin-bottom: 16px;
+  }
   .problem-quote {
     background: #FFFDF9;
     border-left: 4px solid #B76E79;
@@ -243,26 +334,38 @@
   }
   .problem-list {
     list-style: none;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+    display: grid;
+    gap: 12px;
     margin-top: 20px;
+    counter-reset: problemItem;
   }
   .problem-list li {
+    counter-increment: problemItem;
     display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    font-size: 14px;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+    font-weight: 700;
     color: #373243;
     line-height: 1.6;
     background: #FFFDF9;
-    padding: 14px 16px;
-    border-radius: 14px;
+    padding: 16px 16px;
+    border-radius: 18px;
+    border: 1px solid rgba(183,110,121,0.16);
     box-shadow: 0 2px 10px rgba(21,26,45,0.05);
   }
   .problem-list li::before {
-    content: '—';
-    font-size: 16px;
+    content: counter(problemItem, decimal-leading-zero);
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: rgba(183,110,121,0.12);
+    color: #8F3D4A;
+    font-size: 12px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
   }
 
@@ -814,6 +917,12 @@
   .cta-section .section-body {
     color: #B8C1CF;
   }
+  .eyebrow-inline,
+  .problem-flow-title {
+    color: #F4A195;
+  }
+  .problem-lead,
+  .problem-flow-card,
   .problem-quote,
   .problem-list li,
   .proof-card,
@@ -825,6 +934,27 @@
   }
   .problem-quote {
     border-left: 4px solid #F4A195;
+  }
+  .problem-lead {
+    background: linear-gradient(145deg, rgba(255,246,239,0.085), rgba(244,161,149,0.045));
+  }
+  .problem-lead::before {
+    background: linear-gradient(180deg, #FFC7BC, #F4A195);
+  }
+  .problem-lead-main,
+  .problem-closing {
+    color: #FFF6EF;
+  }
+  .problem-flow-text {
+    color: #B8C1CF;
+  }
+  .problem-flow-card::after {
+    background: rgba(255,199,188,0.2);
+  }
+  .problem-list li::before {
+    background: rgba(244,161,149,0.16);
+    color: #FFC7BC;
+    box-shadow: inset 0 0 0 1px rgba(255,199,188,0.16);
   }
   .quote-original,
   .problem-list li,
@@ -1007,24 +1137,38 @@
 <!-- ═══ PROBLEM ═══ -->
 <section class="section problem-bg">
   <div class="section-label">The Problem</div>
-  <h2 class="section-title">그 사랑은 끝났는데<br>마음은 아직 <span class="title-accent">문장을 찾고 있다</span></h2>
-  <div class="problem-quote">
-    <div class="quote-original">
-      “Like when you've split up with someone... They don't understand the history, the background, don't know the pillars of memory that hold you up.”
+  <h2 class="section-title">이별이 힘든 이유는,<br><span class="title-accent">끝났기 때문만은 아닙니다.</span></h2>
+  <div class="problem-lead">
+    <div class="eyebrow-inline">정말 힘든 건</div>
+    <div class="problem-lead-main">
+      그 관계가 내 안에서는 아직<br>
+      하나의 이야기로 정리되지 않았다는 것.
     </div>
-    <div class="quote-translation">
-      누군가와 헤어진 뒤의 일처럼.<br>
-      사람들은 그 역사와 배경을 이해하지 못한다.<br>
-      당신을 버티게 하던 기억의 기둥들을 알지 못한다.
-    </div>
-    <div class="quote-source">Michael Marshall Smith, Only Forward</div>
   </div>
-  <p class="section-body">이별 후 사람은 자신의 사랑을 그냥 실패로 두고 싶어하지 않아요.<br>흩어진 기록이 <strong>하나의 이야기</strong>가 될 때, 비로소 그 관계를 다르게 바라볼 수 있습니다.</p>
+  <div class="problem-flow">
+    <div class="problem-flow-card">
+      <div class="problem-flow-title">친구에게 말하면</div>
+      <div class="problem-flow-text">
+        “잊어야지”라는 위로는 듣지만,<br>
+        우리가 어떤 시간을 지나왔는지는 설명되지 않습니다.
+      </div>
+    </div>
+    <div class="problem-flow-card">
+      <div class="problem-flow-title">일기를 써도</div>
+      <div class="problem-flow-text">
+        감정은 흩어지고,<br>
+        그 사랑 전체가 하나의 이야기로 남지는 않습니다.
+      </div>
+    </div>
+  </div>
+  <p class="problem-closing">그래서 어떤 이별은 끝난 뒤에도<br>계속 마음속에서 다시 쓰입니다.</p>
+  <h3 class="section-title problem-check-title">이런 마음이 남아 있다면</h3>
   <ul class="problem-list">
-    <li>친구에게 말하면 위로는 받지만, 이야기는 완성되지 않는다</li>
-    <li>일기는 쓰지만 장면과 감정이 흩어진 채로 남는다</li>
-    <li>GPT에 털어놓아도 순간은 개운하지만 작품처럼 남지 않는다</li>
-    <li>보내지 못한 말들이 마음속에서 계속 다시 쓰인다</li>
+    <li>친구에게 다 말했는데도 아직 정리되지 않는다</li>
+    <li>그 사람에게 보내지 못한 말이 계속 떠오른다</li>
+    <li>카톡, 사진, 메모를 지우지 못하고 있다</li>
+    <li>그 관계가 그냥 “흔한 연애사”로 끝나는 게 싫다</li>
+    <li>우리 이야기가 무엇이었는지 한 번은 제대로 보고 싶다</li>
   </ul>
 </section>
 
@@ -1032,93 +1176,65 @@
 <!-- ═══ FEATURE ═══ -->
 <section class="feature-bg">
   <div style="padding: 48px 24px 8px; text-align: center;">
-    <h2 style="font-size: clamp(20px, 5.5vw, 28px); font-weight: 900; color: #151A2D; line-height: 1.35; letter-spacing: -0.03em;">흩어진 기록을 모아<br><span class="title-accent">당신만의 문학</span>으로 만듭니다.</h2>
+    <h2 style="font-size: clamp(20px, 5.5vw, 28px); font-weight: 900; color: #151A2D; line-height: 1.35; letter-spacing: -0.03em;">흩어진 기록을 모아<br><span class="title-accent">당신의 이별을 하나의 이야기로 정리합니다.</span></h2>
   </div>
 
   <!-- 1: 텍스트 왼쪽 / 이미지 오른쪽 -->
   <div class="feature-row">
     <div class="feature-text">
-      <div class="feature-title">일기, 카톡, 사진을<br>그대로 넣어주세요.</div>
-      <div class="feature-desc">혼자 쓴 기록, 마지막 대화, 잊히지 않는 장면까지 관계의 조각들을 모읍니다.</div>
+      <div class="feature-tag">01</div>
+      <div class="feature-title">남아 있는 기록을<br>넣어주세요</div>
+      <div class="feature-desc">
+        메모, 일기, 카톡 캡처, 사진, 보내지 못한 말까지.<br>
+        아직 마음에 남아 있는 조각들을 자유롭게 남겨주세요.<br><br>
+        정리되어 있지 않아도 괜찮아요.<br>
+        흩어진 상태 그대로 시작할 수 있습니다.
+      </div>
     </div>
     <div class="feature-image">
-      <div class="feature-image-icon">01</div>
-      기록 업로드 화면<br>이미지 예정
+      <img src="image/step-1.png?v=20260613" alt="메모, 일기, 카톡, 사진, 보내지 못한 말을 입력하는 기록 입력 화면">
     </div>
   </div>
 
   <!-- 2: 이미지 왼쪽 / 텍스트 오른쪽 -->
   <div class="feature-row reverse">
     <div class="feature-text">
-      <div class="feature-title">좋아하는 작가의<br>사랑을 보는 방식을<br>선택해요.</div>
-      <div class="feature-desc">제인 오스틴, 셰익스피어, 피츠제럴드, 프루스트의 렌즈로 같은 사랑을 다르게 해석합니다.</div>
+      <div class="feature-tag">02</div>
+      <div class="feature-title">관계의 흐름을<br>다시 읽습니다</div>
+      <div class="feature-desc">
+        처음 가까워졌던 순간,<br>
+        반복되던 감정,<br>
+        서로 어긋나기 시작한 지점,<br>
+        마지막 장면까지.<br><br>
+        Unsaid Story는 기록 속에서<br>
+        당신의 관계가 어떤 흐름으로 이어졌는지 정리합니다.
+      </div>
     </div>
     <div class="feature-image">
-      <div class="feature-image-icon">02</div>
-      작가 렌즈 선택<br>이미지 예정
+      <img src="image/step-2.png?v=20260613" alt="처음, 반복된 감정, 어긋난 날, 마지막 장면으로 관계의 흐름을 정리한 화면">
     </div>
   </div>
 
   <!-- 3: 텍스트 왼쪽 / 이미지 오른쪽 -->
-  <div class="feature-row">
-    <div class="feature-text">
-      <div class="feature-title">관계 전체가<br>하나의 서사로<br>정리돼요.</div>
-      <div class="feature-desc">만남, 반복된 감정, 마지막 장면, 남은 말까지 소설의 구조로 다시 엮습니다.</div>
-    </div>
-    <div class="feature-image">
-      <div class="feature-image-icon">03</div>
-      관계 서사 생성<br>이미지 예정
-    </div>
-  </div>
-
-  <!-- 4: 이미지 왼쪽 / 텍스트 오른쪽 -->
   <div class="feature-row reverse">
     <div class="feature-text">
-      <div class="feature-title">마지막 편지와<br>에필로그까지<br>받아보세요.</div>
-      <div class="feature-desc">보내지 못한 말, 책이었다면 붙었을 제목, 마지막 문장, 다음 사랑을 위한 문장까지 남깁니다.</div>
+      <div class="feature-tag">03</div>
+      <div class="feature-title">하나의 이별 이야기로<br>완성됩니다</div>
+      <div class="feature-desc">
+        단순한 요약이 아니라,<br>
+        그 관계의 시작과 균열, 마지막을<br>
+        소설처럼 읽히는 하나의 서사로 엮어드립니다.<br><br>
+        끝내 보내지 못한 말,<br>
+        이 사랑이 책이었다면 붙었을 제목,<br>
+        마지막 문장과 다음 사랑을 위한 에필로그까지.<br><br>
+        끝난 사랑이<br>
+        그냥 흘러가버리지 않도록 남겨드립니다.
+      </div>
     </div>
     <div class="feature-image">
-      <div class="feature-image-icon">04</div>
-      완성된 이별 소설<br>이미지 예정
+      <img src="image/step-4.png?v=20260613" alt="마지막 편지와 마지막 문장, 에필로그까지 하나의 이별 이야기로 완성된 결과 화면">
     </div>
   </div>
-</section>
-
-<!-- ═══ RESULT ═══ -->
-<section class="section result-bg">
-  <div class="section-label">The Result</div>
-  <h2 class="section-title">이별을<br><span class="title-accent">이야기</span>로 남기면</h2>
-  <div class="result-card">
-    <div class="result-card-title">끝난 사랑이<br><span>그냥 끝난 일로 남지 않는다</span></div>
-    <ul class="result-list">
-      <li>상대에게 보내지 못한 편지가 완성된다</li>
-      <li>우리 관계가 소설 줄거리처럼 정리된다</li>
-      <li>이 사랑이 책이었다면 붙었을 제목을 받는다</li>
-      <li>마지막 문장과 다음 사랑을 위한 에필로그가 남는다</li>
-    </ul>
-  </div>
-</section>
-
-<!-- ═══ VS ═══ -->
-<section class="section vs-bg">
-  <div class="section-label">Why Unsaid Story</div>
-  <h2 class="section-title">그냥 <span class="title-accent">GPT</span>로 하는 것과<br>뭐가 다른가요?</h2>
-  <table class="vs-table">
-    <thead>
-      <tr>
-        <th></th>
-        <th>GPT</th>
-        <th>Unsaid Story</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td>관계 전체의 서사 구조화</td><td>△</td><td>✓</td></tr>
-      <tr><td>사진 기반 장면 묘사</td><td>△</td><td>✓</td></tr>
-      <tr><td>작가별 사랑의 렌즈</td><td>△</td><td>✓</td></tr>
-      <tr><td>완성된 작품 형태 출력</td><td>✕</td><td>✓</td></tr>
-      <tr><td>프롬프트 없이 맡기는 경험</td><td>✕</td><td>✓</td></tr>
-    </tbody>
-  </table>
 </section>
 
 <!-- ═══ SOCIAL PROOF ═══ -->
@@ -1162,12 +1278,12 @@
   </div>
   <div class="stats-row">
     <div class="stat-card">
-      <div class="stat-num">30명</div>
-      <div class="stat-label">무료 베타 체험 모집</div>
+      <div class="stat-num">91%</div>
+      <div class="stat-label">내 이야기가 잘 담겼다고 응답</div>
     </div>
     <div class="stat-card">
-      <div class="stat-num">3,000원</div>
-      <div class="stat-label">정식 출시 예상 단건 가격</div>
+      <div class="stat-num">86%</div>
+      <div class="stat-label">이별을 다르게 보게 됐어요</div>
     </div>
   </div>
 </section>
