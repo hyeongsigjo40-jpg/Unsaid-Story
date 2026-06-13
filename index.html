@@ -804,6 +804,10 @@
     color: #FFF6EF !important;
     text-shadow: 0 1px 14px rgba(244,161,149,0.08);
   }
+  .title-accent {
+    color: #F4A195;
+    text-shadow: 0 0 18px rgba(244,161,149,0.18);
+  }
   .section-body,
   .feature-desc,
   .step-desc,
@@ -974,7 +978,7 @@
 <section class="hero">
   <!-- unsaid-hero.png 파일을 image 폴더에 저장하면 자동으로 표시됩니다 -->
   <div class="hero-image-wrap" id="heroImageWrap" style="display:none">
-    <img src="image/unsaid-hero.png" alt="Unsaid Story 서비스 화면" id="heroImage">
+    <img src="image/unsaid-hero.png?v=20260613-final" alt="Unsaid Story 서비스 화면" id="heroImage">
     <button class="hero-cta" onclick="openModal()">선착순 30명 무료 체험 신청</button>
   </div>
   <div class="hero-image-placeholder" id="heroPlaceholder">
@@ -1003,7 +1007,7 @@
 <!-- ═══ PROBLEM ═══ -->
 <section class="section problem-bg">
   <div class="section-label">The Problem</div>
-  <h2 class="section-title">그 사랑은 끝났는데<br>마음은 아직 문장을 찾고 있다</h2>
+  <h2 class="section-title">그 사랑은 끝났는데<br>마음은 아직 <span class="title-accent">문장을 찾고 있다</span></h2>
   <div class="problem-quote">
     <div class="quote-original">
       “Like when you've split up with someone... They don't understand the history, the background, don't know the pillars of memory that hold you up.”
@@ -1028,7 +1032,7 @@
 <!-- ═══ FEATURE ═══ -->
 <section class="feature-bg">
   <div style="padding: 48px 24px 8px; text-align: center;">
-    <h2 style="font-size: clamp(20px, 5.5vw, 28px); font-weight: 900; color: #151A2D; line-height: 1.35; letter-spacing: -0.03em;">흩어진 기록을 모아<br>당신만의 문학으로 만듭니다.</h2>
+    <h2 style="font-size: clamp(20px, 5.5vw, 28px); font-weight: 900; color: #151A2D; line-height: 1.35; letter-spacing: -0.03em;">흩어진 기록을 모아<br><span class="title-accent">당신만의 문학</span>으로 만듭니다.</h2>
   </div>
 
   <!-- 1: 텍스트 왼쪽 / 이미지 오른쪽 -->
@@ -1083,7 +1087,7 @@
 <!-- ═══ RESULT ═══ -->
 <section class="section result-bg">
   <div class="section-label">The Result</div>
-  <h2 class="section-title">이별을<br>이야기로 남기면</h2>
+  <h2 class="section-title">이별을<br><span class="title-accent">이야기</span>로 남기면</h2>
   <div class="result-card">
     <div class="result-card-title">끝난 사랑이<br><span>그냥 끝난 일로 남지 않는다</span></div>
     <ul class="result-list">
@@ -1098,7 +1102,7 @@
 <!-- ═══ VS ═══ -->
 <section class="section vs-bg">
   <div class="section-label">Why Unsaid Story</div>
-  <h2 class="section-title">그냥 GPT로 하는 것과<br>뭐가 다른가요?</h2>
+  <h2 class="section-title">그냥 <span class="title-accent">GPT</span>로 하는 것과<br>뭐가 다른가요?</h2>
   <table class="vs-table">
     <thead>
       <tr>
@@ -1120,7 +1124,7 @@
 <!-- ═══ SOCIAL PROOF ═══ -->
 <section class="section proof-bg">
   <div class="section-label">Early Feedback</div>
-  <h2 class="section-title">체험자들의<br>반응이에요</h2>
+  <h2 class="section-title">체험자들의<br><span class="title-accent">반응</span>이에요</h2>
   <div class="cards">
     <div class="proof-card">
       <div class="stars">★★★★★</div>
@@ -1171,9 +1175,9 @@
 <!-- ═══ FINAL CTA ═══ -->
 <section class="cta-section">
   <div class="section-label">Limited Beta</div>
-  <h2 class="section-title">당신의 이별 이야기를<br>무료로 먼저 받아보세요</h2>
+  <h2 class="section-title">당신의 이별 이야기를<br><span class="title-accent">무료로 먼저</span> 받아보세요</h2>
   <button class="cta-btn" onclick="openModal()">선착순 30명 무료 체험 신청</button>
-  <p class="cta-sub">선착순 마감 · 비용 없음 · 카카오톡으로 안내</p>
+  <p class="cta-sub">선착순 마감 · 비용 없음 · 신청만으로 완료</p>
 </section>
 
 <!-- ═══ FOOTER ═══ -->
@@ -1205,7 +1209,7 @@
     <div class="modal-handle"></div>
     <div id="formState">
       <div class="modal-title">무료 체험단 신청</div>
-      <div class="modal-sub">남겨주신 연락처로 카카오톡 안내를 보내드릴게요.</div>
+      <div class="modal-sub">무료 체험 신청을 위해 이름과 연락처를 남겨주세요.</div>
       <div class="form-group">
         <label class="form-label">이름</label>
         <input class="form-input" id="inputName" type="text" placeholder="홍길동" maxlength="10">
@@ -1228,7 +1232,7 @@
       <div class="success-icon">✓</div>
       <div class="success-title">신청 완료!</div>
       <div class="success-body">
-        24시간 내에 연락드릴게요.<br>
+        무료 체험 신청이 정상적으로 접수되었습니다.<br>
         남겨주신 이야기를 바탕으로<br>당신만의 이별 문학을 만들어드려요.
       </div>
     </div>
